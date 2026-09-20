@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+
+:root {
+  --blue: #003f9f;
+  --blue-dark: #001d55;
+  --blue-deep: #001b52;
+  --cyan: #0aa9e8;
+  --yellow: #ffd600;
+  --ink: #071634;
+  --muted: #667085;
+  --line: #e5ebf4;
+  --white: #fff;
+  --bg: #f7faff;
+  --shadow: 0 20px 55px rgba(0, 43, 116, .12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--white); }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+.navbar {
+  position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92);
+  backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0, 47, 130, .08);
+}
+.nav-inner { height: 82px; display: flex; align-items: center; justify-content: space-between; }
+.brand { border: 0; background: none; display: flex; align-items: center; gap: 10px; padding: 0; text-align: left; }
+.brand img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; object-position: center 20%; }
+.brand strong { display: block; color: var(--blue); font: 900 17px "Montserrat"; letter-spacing: -.7px; }
+.brand span { display: block; color: #111c38; font: 700 10px "Montserrat"; letter-spacing: .8px; }
+.nav-links { display: flex; align-items: center; gap: 26px; }
+.nav-links button { border: 0; background: none; color: #253454; font-weight: 700; font-size: 14px; }
+.nav-links button:hover { color: var(--blue); }
+.nav-links .nav-book { background: var(--blue); color: #fff; padding: 12px 18px; border-radius: 12px; }
+.menu-btn { display: none; border: 0; background: none; color: var(--blue); }
+
+.hero { position: relative; overflow: hidden; background: linear-gradient(130deg, #fff 0%, #f5f9ff 55%, #eaf4ff 100%); padding: 80px 0 90px; }
+.hero:after { content: ""; position: absolute; width: 650px; height: 650px; border: 1px solid rgba(0,63,159,.1); border-radius: 50%; right: -360px; top: -160px; box-shadow: 0 0 0 22px rgba(0,63,159,.025), 0 0 0 44px rgba(0,63,159,.02); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+.eyebrow, .section-kicker { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font: 800 12px "Montserrat"; letter-spacing: 1.4px; }
+.eyebrow { background: #e5f6ff; padding: 8px 12px; border-radius: 999px; }
+.hero h1 { font: 900 clamp(42px, 5.3vw, 76px)/1.03 "Montserrat"; letter-spacing: -3px; margin: 20px 0; color: var(--ink); }
+.hero h1 span, .section-heading h2 span, .contact-section h2 span { color: var(--blue); }
+.hero p { color: var(--muted); font-size: 18px; line-height: 1.7; max-width: 620px; }
+.hero-actions { display: flex; gap: 12px; margin: 28px 0; flex-wrap: wrap; }
+.primary-btn, .secondary-btn, .white-btn { border: 0; border-radius: 13px; padding: 14px 20px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-weight: 800; }
+.primary-btn { color: white; background: linear-gradient(135deg, var(--blue), #075fd0); box-shadow: 0 14px 28px rgba(0,63,159,.2); }
+.primary-btn:hover { transform: translateY(-1px); }
+.secondary-btn { background: white; color: var(--blue); border: 1px solid #d8e3f2; }
+.trust-row { display: flex; gap: 16px; flex-wrap: wrap; color: #526079; font-size: 13px; font-weight: 700; }
+.trust-row div { display: flex; gap: 6px; align-items: center; }
+.trust-row svg { color: #13a85d; width: 16px; }
+.hero-visual { position: relative; min-height: 560px; display: grid; place-items: center; }
+.hero-card { width: min(500px, 90%); border-radius: 36px; overflow: hidden; background: white; box-shadow: 0 35px 80px rgba(0,46,120,.2); transform: rotate(2deg); }
+.hero-card img { width: 100%; height: 570px; object-fit: cover; object-position: 50% 45%; }
+.floating-card { position: absolute; left: 0; bottom: 48px; background: #fff; padding: 13px 18px 13px 13px; border-radius: 18px; display: flex; align-items: center; gap: 11px; box-shadow: var(--shadow); }
+.floating-card b, .floating-card span { display: block; }
+.floating-card b { font-size: 13px; }
+.floating-card span { font-size: 11px; color: var(--muted); }
+.round-icon { width: 42px; height: 42px; display: grid; place-items: center; background: #e6f8ff; color: var(--blue); border-radius: 13px; }
+
+.poster-strip { padding: 70px 0; background: #fff; }
+.poster-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+.poster-grid > img { width: 100%; max-height: 610px; object-fit: cover; object-position: top; border-radius: 25px; box-shadow: var(--shadow); }
+.poster-copy h2, .contact-section h2 { font: 900 clamp(34px,4vw,56px)/1.08 "Montserrat"; letter-spacing: -2px; margin: 12px 0 20px; }
+.poster-copy p, .contact-lead { color: var(--muted); line-height: 1.8; font-size: 17px; }
+.text-btn { border: 0; background: none; padding: 0; display: inline-flex; align-items: center; gap: 7px; color: var(--blue); font-weight: 800; margin-top: 12px; }
+
+.section { padding: 105px 0; }
+.services-section { background: var(--bg); }
+.section-heading { max-width: 730px; margin-bottom: 42px; }
+.section-heading h2 { font: 900 clamp(34px,4vw,54px)/1.1 "Montserrat"; letter-spacing: -2px; margin: 10px 0 14px; }
+.section-heading p { color: var(--muted); font-size: 17px; line-height: 1.7; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.service-card { background: white; border: 1px solid var(--line); border-radius: 20px; padding: 25px; min-height: 250px; transition: .2s ease; }
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: #cfe0f8; }
+.service-icon { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 15px; color: var(--blue); background: #eaf5ff; margin-bottom: 22px; }
+.service-card h3 { margin: 0 0 10px; font: 800 17px "Montserrat"; }
+.service-card p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 13px; }
+.service-card button { margin-top: 18px; padding: 0; border: 0; background: none; color: var(--blue); font-size: 12px; font-weight: 800; display: flex; align-items: center; gap: 5px; }
+
+.results-section { background: white; }
+.section-heading.split { display: flex; justify-content: space-between; gap: 30px; align-items: end; max-width: none; }
+.section-heading.split > p { max-width: 420px; }
+.gallery-grid { display: grid; grid-template-columns: 1.4fr .8fr; grid-template-rows: 400px 260px; gap: 18px; }
+.gallery-card { position: relative; overflow: hidden; border-radius: 22px; background: #ddd; }
+.gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.gallery-card:hover img { transform: scale(1.04); }
+.gallery-1 { grid-row: 1 / 3; }
+.gallery-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 42px 22px 20px; background: linear-gradient(transparent, rgba(0,20,60,.82)); color: #fff; }
+.gallery-overlay span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #bfeaff; font-weight: 800; }
+.gallery-overlay b { display: block; margin-top: 4px; font: 800 19px "Montserrat"; }
+
+.booking-banner { padding: 65px 0; background: linear-gradient(120deg, #003687, #005dcc); color: #fff; position: relative; overflow: hidden; }
+.booking-banner:after { content:""; position:absolute; width:500px; height:500px; border: 1px solid rgba(255,255,255,.18); border-radius:50%; right:-160px; top:-220px; }
+.booking-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; position: relative; z-index: 1; }
+.section-kicker.light { color: #8fe3ff; }
+.booking-inner h2 { margin: 10px 0; font: 900 40px "Montserrat"; letter-spacing: -1.5px; }
+.booking-inner p { margin: 0; color: #d9ebff; }
+.white-btn { background: white; color: var(--blue); min-width: 210px; }
+
+.contact-section { background: #f7faff; }
+.contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; align-items: center; }
+.contact-items { display: grid; gap: 14px; margin-top: 32px; }
+.contact-items a { display: flex; align-items: center; gap: 15px; padding: 13px 0; }
+.contact-items a:hover b { color: var(--blue); }
+.contact-items a > span { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: var(--blue); background: white; box-shadow: 0 8px 20px rgba(0,35,90,.08); }
+.contact-items small { display: block; color: #8a94a8; font-size: 10px; font-weight: 800; letter-spacing: 1px; margin-bottom: 3px; }
+.contact-items b { font-size: 16px; }
+.address-card { background: var(--blue-deep); color: white; border-radius: 28px; padding: 40px; box-shadow: 0 28px 55px rgba(0,35,100,.18); }
+.address-icon { width: 54px; height: 54px; border-radius: 16px; background: rgba(255,255,255,.12); display:grid; place-items:center; margin-bottom: 28px; }
+.address-card > span { color: #71dcff; font: 800 11px "Montserrat"; letter-spacing: 1.2px; }
+.address-card h3 { font: 800 25px "Montserrat"; margin: 10px 0; }
+.address-card p { color: #c9daf4; line-height: 1.7; }
+.mini-actions { display: flex; gap: 8px; margin-top: 25px; flex-wrap: wrap; }
+.mini-actions a { padding: 9px 12px; border-radius: 10px; background: rgba(255,255,255,.1); display: inline-flex; align-items:center; gap:6px; font-size: 12px; font-weight: 700; }
+
+.footer { background: #001335; color: #c9d6ea; padding: 24px 0; }
+.footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; font-size:12px; }
+.footer b, .footer span { display:block; }
+.footer b { color:#fff; font:800 13px "Montserrat"; }
+.footer span { margin-top:4px; }
+
+.whatsapp-float { position: fixed; z-index: 60; right: 24px; bottom: 24px; width: 60px; height: 60px; display:grid; place-items:center; border-radius:50%; color:#fff; background:#16b958; box-shadow: 0 14px 35px rgba(14,145,68,.35); }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(0,18,50,.62); backdrop-filter: blur(6px); display:grid; place-items:center; padding:20px; overflow:auto; }
+.booking-modal { position:relative; width:min(680px,100%); max-height:90vh; overflow:auto; background:#fff; border-radius:25px; padding:34px; box-shadow: 0 30px 80px rgba(0,0,0,.3); }
+.close-modal { position:absolute; top:18px; right:18px; border:0; background:#f2f5f9; width:38px; height:38px; display:grid; place-items:center; border-radius:11px; color:#526079; }
+.modal-heading h2 { margin:8px 0 8px; font:900 32px "Montserrat"; }
+.modal-heading p { margin:0 0 25px; color:var(--muted); }
+.booking-modal form { display:grid; gap:15px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.booking-modal label { display:grid; gap:7px; font-size:12px; font-weight:800; color:#35415a; }
+.booking-modal input, .booking-modal select, .booking-modal textarea { width:100%; border:1px solid #dbe3ee; border-radius:11px; padding:12px 13px; outline:none; color:#17223a; background:#fff; }
+.booking-modal input:focus, .booking-modal select:focus, .booking-modal textarea:focus { border-color:#5e9ae8; box-shadow:0 0 0 3px rgba(0,95,208,.08); }
+.booking-modal textarea { min-height:85px; resize:vertical; }
+.primary-btn.full { width:100%; margin-top:3px; }
+.form-status { margin:0; text-align:center; color:var(--blue); font-size:12px; font-weight:700; }
+
+@media (max-width: 950px) {
+  .nav-links { display:none; position:absolute; left:20px; right:20px; top:72px; background:white; padding:16px; border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); flex-direction:column; align-items:stretch; }
+  .nav-links.open { display:flex; }
+  .nav-links button { padding:10px; text-align:left; }
+  .nav-links .nav-book { text-align:center; }
+  .menu-btn { display:block; }
+  .hero-grid, .poster-grid, .contact-grid { grid-template-columns:1fr; gap:40px; }
+  .hero { padding-top:55px; }
+  .hero-visual { min-height:460px; }
+  .hero-card img { height:500px; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 650px) {
+  .container { width:min(100% - 28px, 1180px); }
+  .hero h1 { letter-spacing:-2px; }
+  .hero p { font-size:16px; }
+  .hero-visual { min-height:390px; }
+  .hero-card { width:90%; border-radius:25px; }
+  .hero-card img { height:410px; }
+  .floating-card { left:0; bottom:20px; }
+  .poster-grid { gap:28px; }
+  .section { padding:75px 0; }
+  .services-grid { grid-template-columns:1fr; }
+  .section-heading.split, .booking-inner, .footer-inner { display:block; }
+  .section-heading.split > p { margin-top:18px; }
+  .gallery-grid { grid-template-columns:1fr; grid-template-rows:120px 120px 120px; }
+  .gallery-1 { grid-row:auto; }
+  .booking-inner .white-btn { margin-top:24px; }
+  .contact-grid { gap:35px; }
+  .form-row { grid-template-columns:1fr; }
+  .booking-modal { padding:25px 18px; }
+  .whatsapp-float { width:54px; height:54px; right:16px; bottom:16px; }
+}
